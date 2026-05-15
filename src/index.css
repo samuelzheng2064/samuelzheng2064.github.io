@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Oswald:wght@300&family=Amatic+SC:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Montserrat", sans-serif;
+  --font-subtitle: "Oswald", sans-serif;
+  --font-scripture: "Amatic SC", cursive;
+  
+  --color-base-blue: #1F4E79;
+  --color-ochre: #C68255;
+  --color-brown: #6B3F31;
+  --color-salmon: #DE8B73;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: var(--color-base-blue);
+}
+
+body {
+  font-family: var(--font-subtitle);
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-mask-nature {
+    background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1600&q=80'); /* Nature image */
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: var(--font-heading);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
