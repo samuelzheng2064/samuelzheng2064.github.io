@@ -22,7 +22,7 @@ export default function Navbar() {
               </div>
             </motion.div>
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
-              <span className="text-base-blue font-light tracking-[0.2em] text-[10px] uppercase">Global Medical Missions Alliance</span>
+              <span className="text-base-blue font-bold tracking-[0.2em] text-[11px] uppercase">Global Medical Missions Alliance</span>
             </div>
           </Link>
 

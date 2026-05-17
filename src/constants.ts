@@ -26,7 +26,7 @@ export const FLORIDA_DATA: StateData = {
           id: 'uf-crewneck',
           name: 'Declare His Glory Crewneck',
           price: '$35.00',
-          imageUrl: 'merch_img/uf_merch_2026.png', 
+          imageUrl: 'merch_img/floridaMerch/uf_merch_2026.png', 
           description: 'Premium UF GMMA "Declare His Glory Among The Nations" crewneck sweatshirt.'
         }
       ]
@@ -44,7 +44,7 @@ export const FLORIDA_DATA: StateData = {
           id: 'usf-tee',
           name: 'USF GMMA Chapter Tee',
           price: '$20.00',
-          imageUrl: 'merch_img/example_usf_merch.png', 
+          imageUrl: 'merch_img/floridaMerch/example_usf_merch.png', 
           description: 'Official USF GMMA classic green chapter t-shirt.'
         }
       ]

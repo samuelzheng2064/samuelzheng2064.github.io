@@ -1,13 +1,12 @@
-
-import Navbar from '../components/Navbar';
-import USAInteractiveMap from '../components/USAInteractiveMap';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Globe, Users, ShoppingCart } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import Navbar from "../components/Navbar";
+import USAInteractiveMap from "../components/USAInteractiveMap";
+import { motion, AnimatePresence } from "framer-motion";
+import { Globe, Users, ShoppingCart } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const merchImages = [
-  '/merch_img/uf_merch_2026.png',
-  '/merch_img/example_usf_merch.png'
+  "/merch_img/floridaMerch/uf_merch_2026.png",
+  "/merch_img/floridaMerch/example_usf_merch.png",
 ];
 
 function MerchShuffle() {
@@ -59,20 +58,27 @@ export default function HomePage() {
                     Healing through Missions
                   </div>
                   <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light text-base-blue leading-[1.1] tracking-tight italic">
-                    <span className="block text-mask-nature">Global Medical</span>
+                    <span className="block text-mask-nature">
+                      Global Medical
+                    </span>
                     <span className="font-bold">Missions Alliance</span>
                   </h1>
-                  <p className="mt-8 text-xl text-brown max-w-2xl mx-auto lg:mx-0 leading-relaxed font-scripture italic">
-                    "And he sent them out to proclaim the kingdom of God and to heal." - Luke 9:2 (ESV)
+                  <p className="mt-8 text-3xl text-brown max-w-2xl mx-auto lg:mx-0 leading-relaxed font-scripture italic font-bold">
+                    "And he sent them out to proclaim the kingdom of God and to
+                    heal." - Luke 9:2 (ESV)
                   </p>
                   <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                     <button
-                      onClick={() => document.getElementById('map-section')?.scrollIntoView({ behavior: 'smooth' })}
+                      onClick={() =>
+                        document
+                          .getElementById("map-section")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }
                       className="px-10 py-4 bg-base-blue text-white rounded-sm font-bold text-sm tracking-[0.3em] uppercase transition-all hover:bg-ochre active:scale-95"
                     >
                       Explore Chapters
                     </button>
-                    <a 
+                    <a
                       href="https://www.gmma7.org/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -85,17 +91,19 @@ export default function HomePage() {
               </div>
 
               <div className="flex-1 relative">
-                 <motion.div
-                   initial={{ opacity: 0, scale: 0.9 }}
-                   animate={{ opacity: 1, scale: 1 }}
-                   transition={{ duration: 1 }}
-                   className="relative z-10 w-full aspect-[4/5] rounded-tl-[100px] rounded-br-[100px] overflow-hidden shadow-2xl"
-                 >
-                   <MerchShuffle />
-                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-10">
-                     <p className="text-white text-4xl font-scripture italic">Transforming lives, one Christ-centered mission at a time</p>
-                   </div>
-                 </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1 }}
+                  className="relative z-10 w-full aspect-[4/5] rounded-tl-[100px] rounded-br-[100px] overflow-hidden shadow-2xl"
+                >
+                  <MerchShuffle />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-10">
+                    <p className="text-white text-4xl font-scripture italic font-bold">
+                      Transforming lives, one Christ-centered mission at a time
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -109,24 +117,40 @@ export default function HomePage() {
         {/* Feature Highlights */}
         <section className="py-20 bg-white border-y border-base-blue/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-l border-t border-base-blue/10">
-                {[
-                  { icon: Globe, title: "Global Network", desc: "Access to mission trips in over 40 countries." },
-                  { icon: Users, title: "Collegiate Chapters", desc: "Find a community at your university." },
-                  { icon: ShoppingCart, title: "Premium Merch", desc: "Apparel that equips students." }
-                ].map((feature, idx) => (
-                  <div
-                    key={idx}
-                    className="p-10 border-r border-b border-base-blue/10"
-                  >
-                    <div className="w-12 h-12 bg-salmon/10 rounded-full flex items-center justify-center mb-8">
-                      <feature.icon className="text-salmon w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-bold text-base-blue mb-4 uppercase tracking-[0.2em] font-heading">{feature.title}</h3>
-                    <p className="text-brown leading-relaxed font-scripture text-lg italic">{feature.desc}</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-l border-t border-base-blue/10">
+              {[
+                {
+                  icon: Globe,
+                  title: "Global Network",
+                  desc: "Access to mission trips in over 40 countries.",
+                },
+                {
+                  icon: Users,
+                  title: "Collegiate Chapters",
+                  desc: "Find a community at your university.",
+                },
+                {
+                  icon: ShoppingCart,
+                  title: "Exclusive Merch",
+                  desc: "Apparel from students for students.",
+                },
+              ].map((feature, idx) => (
+                <div
+                  key={idx}
+                  className="p-10 border-r border-b border-base-blue/10"
+                >
+                  <div className="w-12 h-12 bg-salmon/10 rounded-full flex items-center justify-center mb-8">
+                    <feature.icon className="text-salmon w-6 h-6" />
                   </div>
-                ))}
-             </div>
+                  <h3 className="text-xl font-bold text-base-blue mb-4 uppercase tracking-[0.2em] font-heading">
+                    {feature.title}
+                  </h3>
+                  <p className="text-brown leading-[1.2] font-scripture text-2xl italic font-bold">
+                    {feature.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>

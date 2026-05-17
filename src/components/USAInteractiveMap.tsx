@@ -34,7 +34,7 @@ export default function USAInteractiveMap() {
       <div className="text-center mb-16">
         <span className="text-ochre text-xs font-bold uppercase tracking-[0.4em] mb-4 block">Chapter Directory</span>
         <h2 className="text-4xl font-light text-base-blue sm:text-5xl italic leading-tight">Find Your <span className="not-italic font-black text-ochre tracking-tighter uppercase">Community</span></h2>
-        <div className="mt-6 text-brown max-w-3xl mx-auto font-scripture text-xl italic leading-relaxed">
+        <div className="mt-6 text-brown max-w-3xl mx-auto font-scripture text-2xl italic leading-tight font-bold">
           <p>
             Discover what God is doing through our national network of GMMA chapters. Select a state below to explore local chapters, and partner with our teams. By picking up some chapter exclusive apparel, you directly support and equip our students for their upcoming medical missions.
           </p>
@@ -133,8 +133,8 @@ export default function USAInteractiveMap() {
                   {FLORIDA_DATA.chapters.map((chapter) => (
                     <div
                       key={chapter.id}
-                      onClick={() => { setSelectedChapter(chapter); setViewedMerchLink(null); }}
-                      onKeyDown={(e) => { if (e.key === 'Enter') { setSelectedChapter(chapter); setViewedMerchLink((prev: string | null) => prev ? chapter.merchFormUrl : null); } }}
+                      onClick={() => setSelectedChapter(chapter)}
+                      onKeyDown={(e) => e.key === 'Enter' && setSelectedChapter(chapter)}
                       role="button"
                       tabIndex={0}
                       className={cn(
@@ -152,7 +152,7 @@ export default function USAInteractiveMap() {
                         <div className="flex gap-6">
                           <div className={cn(
                             "w-14 h-14 rounded-lg flex items-center justify-center shrink-0 transition-all duration-500 border overflow-hidden p-2",
-                            selectedChapter?.id === chapter.id ? "bg-white border-ochre rotate-3" : "bg-base-blue/10 border-base-blue/20 opacity-40 group-hover:opacity-80"
+                            selectedChapter?.id === chapter.id ? "bg-white border-ochre rotate-3" : "bg-base-blue/20 border-base-blue/60 grayscale"
                           )}>
                              <img 
                                src={chapter.logoUrl} 
